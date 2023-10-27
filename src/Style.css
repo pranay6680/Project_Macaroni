@@ -1,0 +1,187 @@
+.Navbar {
+  background-color: black;
+  width: 100%;
+}
+.headings>ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  flex-direction: row;
+}
+.headings {
+  position: relative;
+}
+.headings > ul li:hover {
+  background-color: aqua;
+  cursor: pointer;
+  border-radius: 0 0 15px 15px;
+}
+.headings > ul li {
+  width: auto;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0 4%;
+}
+.headings  h1 {
+  width: auto;
+  color: white;
+}
+
+@media screen and (max-width: 760px) {
+  .imgbtnCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .imgbtn {
+    position: relative;
+    padding: 5%;
+    width: 80%;
+    align-items: center;
+    margin: auto;
+  }
+  .btn {
+    position: relative;
+    margin: auto;
+    align-items: center;
+    max-width: 50%;
+    padding: 5%;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .btn:hover {
+    background-color: #eee6ff;
+  }
+}
+/* image editing */
+.restopic {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+/* this is for about popup */
+.overPop {
+  position: absolute;
+  background-color: rgba(176, 163, 127, 0.7);
+  /* background container occupies fully */
+  width: 100%;
+  border-radius: 15px;
+  align-items: center;
+ 
+}
+.aboutCont {
+  display: flex;
+  /* given  width full but not to exceed max width  */
+  width: 100%;
+  max-width: 80%;
+  background-color: rgb(53, 51, 53);
+  margin: 2% auto;
+  border-radius: 35px 0 35px 0;
+  z-index : 1;
+}
+.aboutContButton{
+  position: absolute;
+  margin: 10px 0 0 77.5%;
+  border-radius: 50%;
+  border : none;
+}
+.aboutContButton:hover{
+  background-color: rgb(186,41,70) ;
+  color: white;
+}
+.vincoImg {
+  border-radius: 35px 0 35px 0;
+}
+.ParaCont {
+  background-color: cadetblue;
+  text-align: center;
+  margin: auto;
+  width: auto;
+  border-radius: 25px;
+}
+.childParaCont {
+  padding: 30px;
+  font-size: 30px;
+}
+.childParaCont h3 {
+  color: #ffcc80;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.Para {
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* this is for contact us  */
+.contactCont{
+  display: flex;
+  position:absolute;
+  background-color: rgba(176, 163, 127, 0.7);
+  /* background container occupies fully */
+  width: 100%;
+  border-radius: 15px;
+  justify-content: center;
+  
+}
+.contact{
+  background-color: rgb(232, 153, 211);
+  text-align: center;
+  width : 100%;
+  max-width: 60%;
+  border-radius: 30px 0 30px 0 
+}
+.head1 h1{
+  color:rgb(89, 111, 103);
+  font-size: 40px;
+}
+.contact p{
+   font-size: 20px;
+   font-family: Arial, Helvetica, sans-serif;
+}
+.contact .childPara{
+    text-decoration: underline ;
+    text-underline-offset: 10px;
+    
+
+}
+.contactContButton{
+  position:absolute;
+  z-index:2;
+  margin-left:57%;
+  margin-top: 6px;
+  border-radius: 50%;
+  border : none;
+}
+.contactContButton:hover{
+  background-color: rgb(186,41,70) ;
+  color: white;
+}
+.CartPic{
+  margin: 20px 0 0 0;
+  width: 40px;
+  height: 40px;
+}
+.counterCart{
+  color: white;
+  position: absolute;
+  margin: 10px ;
+  font-size: 25px ;
+}
+
+.Price_Button{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   
+}
+.chang1{
+  background-color: rgb(59, 149, 245);
+  color: white;
+  padding : 10px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+

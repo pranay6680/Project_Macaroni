@@ -1,0 +1,142 @@
+.ParentCont{
+    position: absolute;
+    background-color: white;
+    height: 100vh;
+    overflow: auto;
+    /* z-index: 99; */
+   
+}
+.ItemsCont>ul {
+    display: flex;
+    position: relative;
+    padding: 0;
+   flex-wrap: wrap;
+   justify-content: center;   
+}
+.ItemsCont>ul li{
+    margin : 18px 10px 18px 18px;
+    padding : 28px; 
+    background-color: burlywood;
+    list-style: none;
+    border-radius: 30px;
+
+}
+.devider1, .devider2, .devider3, .devider4{
+    width : 100%;
+    height : 3px;
+    background-color: green;
+    display: inline-block;
+}
+
+.foodImages{
+    width : 300px;
+    height: 250px;
+    border-radius: 30px;
+}
+.FoodStarter {
+    width: 100%;
+    display: flex;
+}
+.FoodStarter h1{
+    color: black;
+    margin : 30px auto 10px;
+}
+.FoodStarter .buttonDIv{
+     margin-right : 30px;
+     margin-top:20px;
+    
+}
+.buttonDIv>button {
+    border-radius: 50%;
+    position: absolute;
+    margin-left: -27px;
+} 
+/* this is for fresh pasta */
+.PastaItemsCont>ul {
+    display: flex;
+    position: relative;
+    padding: 0;
+   flex-wrap: wrap;
+   justify-content: center;  
+}
+.PastaItemsCont>ul li{
+    margin : 18px 10px 18px 18px;
+    padding : 28px; 
+    background-color: burlywood;
+    list-style: none;
+    border-radius: 30px;
+}
+.PastaContHead {
+    width: 100%;
+    display: flex;
+   
+}
+.PastaContHead h1{
+    color: black;
+    margin : 30px auto 10px;   
+}
+
+.freshPastaItemsCont>ul {
+    display: flex;
+    position: relative;
+    padding: 0;
+   flex-wrap: wrap;
+   justify-content: center;  
+}
+.freshPastaItemsCont>ul li{
+    margin : 18px 10px 18px 18px;
+    padding : 28px; 
+    background-color: burlywood;
+    list-style: none;
+    border-radius: 30px;
+}
+.freshPastaContHead {
+    width: 100%;
+    display: flex;  
+}
+.freshPastaContHead h1{
+    color: black;
+    margin : 30px auto 10px;   
+}
+.risottiItem2>ul {
+    display: flex;
+    position: relative;
+    padding: 0;
+   flex-wrap: wrap;
+   justify-content: center;  
+}
+.risottiItem2>ul li{
+    margin : 18px 10px 18px 18px;
+    padding : 28px; 
+    background-color: burlywood;
+    list-style: none;
+    border-radius: 30px;
+}
+.risottiItem1 {
+    width: 100%;
+    display: flex;  
+}
+.risottiItem1 h1{
+    color: black;
+    margin : 30px auto 10px;   
+}
+
+/* this is for car open  */
+.overPopCart{
+    position: absolute;
+    background-color: rgba(176, 163, 127, 0.7);
+    /* background container occupies fully */
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    border-radius: 15px;
+  }
+  .grandChild {
+    justify-content: center;
+    display: flex;
+    background-color: white;
+    width : 50%;
+    justify-content: space-between;
+    margin : 10px auto;
+    padding : 30px;
+  }
