@@ -1,36 +1,44 @@
-import React ,{ useReducer } from "react";
+import React ,{ useReducer} from "react";
+import "./Style.css";
 
-// creating rducer funtion 
-const itemReducer = (state , action) => {
-  switch(action.type){
-    case "DELETE" : 
-          return state.filter( (item)=> item.id !== action.id );
-    default :
-          return state;
-        }
+const itemreducer = (newCart, action) => {
+  
+  switch(action.type) {
+    case "DELETE" :
+      return {
+        ...newCart,
+        childItems : newCart.childItems.filter(item => item.id !== action.id)
+        
+      };
+      
+      default :
+      return newCart;
+  }
 }
 
  function InsideCart ({childItems}){
-      console.log(childItems)
-  const [pran , setPran] = useReducer(itemReducer , childItems)
-
-  const itemHandler = (p) => {
-    setPran({type : "DELETE" , id : p})
-  }
  
-  console.log(pran)
+  const [newCart , setNewCart] = useReducer(itemreducer , {childItems})
+   
+  const itemHandler = (p) => {
+    setNewCart({type : "DELETE" , id : p})
+  }
+ if(!window.matchMedia("(min-width :768px)").matches){
+  return null;
+ }
+
   return (
     <div className="InsideCartCont">
        <div className="childInside" >
-          {childItems.map( (child) => (
-            <li className="grandChild" key = {child.id}>  
+          {newCart.childItems.map( (child , index) => (
+            <li className="grandChild"  key = {index}>
             <div className = "parentgrandChild"  >Item : {child.name}</div>  
                <div className ='superGrandChild'> Price :{child.price}</div>
-               <button className="buttonToRemove" onClick={ () => itemHandler(child.id)}>Remove</button>
+               <button className="buttonToRemove" onClick = {() => itemHandler(child.id)}>Remove</button>
             </li>
           ))}
        </div>
     </div>
   )
 }
-export default InsideCart;
+export default React.memo(InsideCart);

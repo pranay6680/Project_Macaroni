@@ -6,14 +6,14 @@ import ErrorBoundary from "./CartHandling";
 import rio from "./App";
 
 
-// import {AddItems} from "./CounterUpdate.js";
 
 
 
 
 
 
-function MenuContent({closeOrderNow , kinItems}){
+
+function MenuContent({closeOrderNow , kinItems, increaseupdater}){
    
     const [items,SetItems]=useState([
         {id :1 ,  name : "BruschettaClassica" , price :"20", description : 'Delicious', image: MenuImages.img1},
@@ -35,6 +35,7 @@ function MenuContent({closeOrderNow , kinItems}){
         
        
     ]);
+ 
     const [pastaItems,SetPasta] = useState([
         {id: 17 , name : "Penne Arabiata" , price : "30", description : "Awesome" , image :MenuImages.img17 },
         {id: 18 , name : "Penne Arabiata" , price : "30", description : "Awesome" , image :MenuImages.img18 },
@@ -60,7 +61,6 @@ function MenuContent({closeOrderNow , kinItems}){
     ]);
     
     
-    
     return (
         <div className="ParentCont">
             <>
@@ -83,7 +83,7 @@ function MenuContent({closeOrderNow , kinItems}){
                               <div className="Price_Button">
                               <h2 className="foodPrice">{food.price}</h2>
                               <div className="changer1">
-                                   <button type="button" className="chang1"  onClick={() =>kinItems({name:food.name , price:food.price})}>Add Item</button>
+                                   <button type="button" className="chang1"  onClick={() =>kinItems({id:food.id,name:food.name , price:food.price , updater : increaseupdater})}>Add Item</button>
                                   
                               </div>
                              

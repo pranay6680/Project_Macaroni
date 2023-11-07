@@ -9,7 +9,11 @@ import Cart from "./starterImages/cart.png";
 import InsideCart  from "./CartHandling";
 
 
+
+
+
 function App() {
+  
   const [Navstate, NavsetState] = useState(window.innerWidth <= 760);
   const SetNavState = () => {
     NavsetState(window.innerWidth <= 760);
@@ -78,10 +82,12 @@ const toggOrderClose = () => {
 ////////////////////////
 // const CartRef = useRef(null)
 const [PranitemCart , setItemCart] = useState([]);
+  
 const [itemCartVisibile, itemCartHidden] = useState(false)
 const PranaddItemsToCart = (foodItemsInCart) => {
   setItemCart([...PranitemCart , foodItemsInCart])
 }
+
 const CartOpen = ()=> {
   itemCartHidden(!itemCartVisibile)
   if(aboutContVisibile){
@@ -92,11 +98,19 @@ const CartOpen = ()=> {
     contactContHidden(false)
 }
 }
-const CartHide = ()=>{
-  itemCartVisibile(false)
-}
-////////////////////////
 
+const [updater , setUpdater] = useState(0);
+
+const increaseupdater = () =>{
+  setUpdater(updater + 1);
+}
+const decreaseupdater = () =>{
+  setUpdater(updater = updater - 1);
+}
+
+
+
+/////////////////////
   const listCont = (
     <>
       <div className="headings">
@@ -119,10 +133,7 @@ const CartHide = ()=>{
           <li>
             <h1 className="co"  onClick={toggContact}>CONTACT US</h1>
           </li >
-          <li><div className="counterCart">{PranitemCart.length}</div>
-           {/* i am calling insidecart here    */}
-          
-          
+          <li><div className="counterCart">{updater}</div>
           <img className="CartPic" src={Cart} alt="restoPic" onClick={CartOpen}></img></li>
         </ul>
         <div
@@ -145,21 +156,25 @@ const CartHide = ()=>{
         className="overPopOrder"
         ref={OrderRef}
         style={{display : OrderNowVisible ? "block":"none"}}>
-          <MenuContent closeOrderNow = {toggOrderClose} kinItems = {PranaddItemsToCart} />
+          <MenuContent closeOrderNow = {toggOrderClose} kinItems = {PranaddItemsToCart} increaseupdater = {increaseupdater} />
+          
           {/* <InsideCart InsideCart ={InsideCart}/> */}
         </div>
         <div 
         className="overPopCart"
-      
+        //  ref = {CartRef}
         style={{display : itemCartVisibile ? "block":"none"}}>
-          <InsideCart childItems = {PranitemCart}  />
+        
+        {itemCartVisibile && <InsideCart childItems = {PranitemCart}/>}
+            
           {/* <InsideCart InsideCart ={InsideCart}/> */}
         </div>
+        
         {/* upto here  */}
       </div>
     
     </>
-    
+   
     
   );
   const Restopic = (
