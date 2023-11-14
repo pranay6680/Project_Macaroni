@@ -23,9 +23,7 @@ const itemreducer = (newCart, action) => {
   const itemHandler = (p) => {
     setNewCart({type : "DELETE" , id : p})
   }
- if(!window.matchMedia("(min-width :768px)").matches){
-  return null;
- }
+
 
   return (
     <div className="InsideCartCont">
@@ -34,7 +32,7 @@ const itemreducer = (newCart, action) => {
             <li className="grandChild"  key = {index}>
             <div className = "parentgrandChild"  >Item : {child.name}</div>  
                <div className ='superGrandChild'> Price :{child.price}</div>
-               <button className="buttonToRemove" onClick = {() => itemHandler(child.id)}>Remove</button>
+               <button className="buttonToRemove" onClick = {() => itemHandler(child.index)}>Remove</button>
             </li>
           ))}
        </div>
